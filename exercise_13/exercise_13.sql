@@ -9,8 +9,7 @@ FROM
     LEFT JOIN city on country.country_id = city.country_id
     LEFT JOIN address on city.city_id = address.city_id
     LEFT JOIN customer on customer.address_id = address.address_id
-    LEFT JOIN payment on customer.customer_id = payment.customer_id FOR JSON AUTO;
-
+    LEFT JOIN payment on customer.customer_id = payment.customer_id
 WHERE
     payment.amount is not null
 GROUP BY
